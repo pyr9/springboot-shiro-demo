@@ -1,0 +1,45 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.2'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.pyr.shiro'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	maven { url 'https://plugins.gradle.org/m2/' }
+	maven { url 'https://maven.aliyun.com/nexus/content/repositories/google' }
+	maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
+	maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter'}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.0'
+//	https://mvnrepository.com/artifact/org.apache.shiro/shiro-core
+	implementation 'org.apache.shiro:shiro-core:1.2.3'
+	// https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring
+	implementation 'org.apache.shiro:shiro-spring:1.2.3'
+// https://mvnrepository.com/artifact/com.alibaba/druid
+	implementation 'com.alibaba:druid:0.2.2-'
+
+// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+	implementation 'org.apache.commons:commons-lang3:3.4'
+	// https://mvnrepository.com/artifact/org.springframework/spring-context-support
+	implementation 'org.springframework:spring-context-support:4.2.3.RELEASE'
+//	https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomca
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:7.0.16'
+//	https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+//	https://mvnrepository.com/artifact/javax.servlet/jstl
+	implementation 'javax.servlet:jstl:1.0.2'
+
+	compileOnly 'javax.servlet:javax.servlet-api:3.1-b04'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
