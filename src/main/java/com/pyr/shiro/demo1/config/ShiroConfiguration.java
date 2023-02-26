@@ -1,7 +1,7 @@
 package com.pyr.shiro.demo1.config;
 
-import com.pyr.shiro.demo1.AuthRealm;
-import com.pyr.shiro.demo1.CredentialMatcher;
+import com.pyr.shiro.demo1.shiro.AuthRealm;
+import com.pyr.shiro.demo1.shiro.CredentialMatcher;
 import org.apache.shiro.cache.MemoryConstrainedCacheManager;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;

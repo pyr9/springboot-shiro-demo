@@ -1,4 +1,4 @@
-package com.pyr.shiro.demo1;
+package com.pyr.shiro.demo1.shiro;
 
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;

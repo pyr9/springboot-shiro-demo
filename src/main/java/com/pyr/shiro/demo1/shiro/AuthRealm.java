@@ -1,4 +1,4 @@
-package com.pyr.shiro.demo1;
+package com.pyr.shiro.demo1.shiro;
 
 
 import com.pyr.shiro.demo1.model.Permission;
