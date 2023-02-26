@@ -1,8 +1,8 @@
 HELP.md
-.gradle
 build/
-!gradle/wrapper/gradle-wrapper.jar
+.gradle
 !**/src/main/**/build/
+!gradle/wrapper/gradle-wrapper.jar
 !**/src/test/**/build/
 
 ### STS ###
@@ -35,3 +35,8 @@ out/
 
 ### VS Code ###
 .vscode/
+.settings/
+target/
+*/target/**
+*/target/*
+/.class
