@@ -34,6 +34,10 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/index", DefaultFilter.authc.name());
         // 不需要登录
         filterChainDefinitionMap.put("/login", DefaultFilter.anon.name());
+        filterChainDefinitionMap.put("/loginUser", DefaultFilter.anon.name());
+
+        // 其他接口需要检验用户是否登录
+        filterChainDefinitionMap.put("/**", DefaultFilter.user.name());
 
         bean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 
