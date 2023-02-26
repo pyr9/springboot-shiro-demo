@@ -6,6 +6,7 @@ import org.apache.shiro.cache.MemoryConstrainedCacheManager;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.filter.mgt.DefaultFilter;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -30,9 +31,9 @@ public class ShiroConfiguration {
         // 配置请求该怎么拦截
         LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         // 需要登录
-        filterChainDefinitionMap.put("/index", "authc");
+        filterChainDefinitionMap.put("/index", DefaultFilter.authc.name());
         // 不需要登录
-        filterChainDefinitionMap.put("/login", "anon");
+        filterChainDefinitionMap.put("/login", DefaultFilter.anon.name());
 
         bean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 
