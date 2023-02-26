@@ -36,6 +36,8 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/login", DefaultFilter.anon.name());
         filterChainDefinitionMap.put("/loginUser", DefaultFilter.anon.name());
 
+        filterChainDefinitionMap.put("/admin", "roles[admin]");
+
         // 其他接口需要检验用户是否登录
         filterChainDefinitionMap.put("/**", DefaultFilter.user.name());
 
