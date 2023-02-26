@@ -16,6 +16,8 @@ repositories {
 }
 
 dependencies {
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent
+	implementation 'org.springframework.boot:spring-boot-starter-parent:1.5.6.RELEASE'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.0'
 //	https://mvnrepository.com/artifact/org.apache.shiro/shiro-core
@@ -23,7 +25,7 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring
 	implementation 'org.apache.shiro:shiro-spring:1.2.3'
 // https://mvnrepository.com/artifact/com.alibaba/druid
-	implementation 'com.alibaba:druid:0.2.2-'
+	implementation 'com.alibaba:druid:1.0.20'
 
 // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
 	implementation 'org.apache.commons:commons-lang3:3.4'
@@ -32,8 +34,9 @@ dependencies {
 //	https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomca
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:7.0.16'
 //	https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
-//	https://mvnrepository.com/artifact/javax.servlet/jstl
 	implementation 'javax.servlet:jstl:1.0.2'
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-tomcat
+	implementation 'org.springframework.boot:spring-boot-starter-tomcat:2.1.18.RELEASE'
 
 	compileOnly 'javax.servlet:javax.servlet-api:3.1-b04'
 	runtimeOnly 'com.mysql:mysql-connector-j'
