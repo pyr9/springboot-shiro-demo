@@ -59,4 +59,10 @@ public class TestController {
         }
         return "login";
     }
+
+    @RequestMapping("/edit")
+    @ResponseBody
+    public String edit() {
+        return "edit success";
+    }
 }

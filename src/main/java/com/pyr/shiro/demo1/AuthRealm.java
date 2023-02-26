@@ -1,6 +1,7 @@
 package com.pyr.shiro.demo1;
 
 
+import com.pyr.shiro.demo1.model.Permission;
 import com.pyr.shiro.demo1.model.Role;
 import com.pyr.shiro.demo1.model.User;
 import com.pyr.shiro.demo1.service.UserService;
@@ -34,22 +35,22 @@ public class AuthRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         User user = (User) principals.fromRealm(this.getClass().getName()).iterator().next();
-        //List<String> permissionList = new ArrayList<>();
+        List<String> permissionList = new ArrayList<>();
         List<String> roleNameList = new ArrayList<>();
         Set<Role> roleSet = user.getRoles();
         if (CollectionUtils.isNotEmpty(roleSet)) {
             for (Role role : roleSet) {
                 roleNameList.add(role.getRname());
-                //        Set<Permission> permissionSet = role.getPermissions();
-                //        if (CollectionUtils.isNotEmpty(permissionSet)) {
-                //            for (Permission permission : permissionSet) {
-                //                permissionList.add(permission.getName());
-                //            }
-                //        }
+                Set<Permission> permissionSet = role.getPermissions();
+                if (CollectionUtils.isNotEmpty(permissionSet)) {
+                    for (Permission permission : permissionSet) {
+                        permissionList.add(permission.getName());
+                    }
+                }
             }
         }
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
-        //info.addStringPermissions(permissionList);
+        info.addStringPermissions(permissionList);
         info.addRoles(roleNameList);
         return info;
     }

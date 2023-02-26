@@ -27,7 +27,6 @@ public class ShiroConfiguration {
         bean.setLoginUrl("/login"); // 设置登录url
         bean.setSuccessUrl("/index");// 设置登录成功后，跳转的url
         bean.setUnauthorizedUrl("/unauthorized"); // 设置没有访问权限后后，跳转的url
-
         // 配置请求该怎么拦截
         LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         // 需要登录
@@ -36,7 +35,10 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/login", DefaultFilter.anon.name());
         filterChainDefinitionMap.put("/loginUser", DefaultFilter.anon.name());
 
+        // 只有拥有admin角色的人，才可以访问admin接口
         filterChainDefinitionMap.put("/admin", "roles[admin]");
+        //只有拥有edit权限的人，才可以访问edit接口
+        filterChainDefinitionMap.put("/edit", "perms[edit]");
 
         // 其他接口需要检验用户是否登录
         filterChainDefinitionMap.put("/**", DefaultFilter.user.name());
